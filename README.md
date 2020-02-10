@@ -50,5 +50,5 @@ Run the training script.
 ```
 python3 -m mgan.main \
   --path datasets/aclImdb/train/ \
-  --spm_path datasets/aclImdb/train/imdb.model
+  --spm_path datasets/aclImdb/train/imdb
 ```
