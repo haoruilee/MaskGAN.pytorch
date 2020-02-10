@@ -1,11 +1,12 @@
 # MaskGAN.pytorch
 
+This is a work forked by  jerinphilip/MaskGAN.pytorch, made some polish, thanks to @birdmanmandbir(https://github.com/birdmanmandbir), he contributes a lot.
+
 A PyTorch attempt at reimplementing 
 
 * MaskGAN: Better Text Generation via Filling in the _______ , William Fedus, Ian Goodfellow, Andrew M. Dai
   [[paper]](https://openreview.net/pdf?id=ByOExmWAb)
-  
-**This is a work in progress.**
+ 
 
 
 # Setting up
