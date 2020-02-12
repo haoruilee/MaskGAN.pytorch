@@ -10,6 +10,13 @@ A PyTorch attempt at reimplementing
   [[paper]](https://openreview.net/pdf?id=ByOExmWAb)
  
 
+# Core environment
+
+Pytorch1.1
+Python3
+
+Some of you may encounter "no attribute 'IterableDataset", please check your pytorch version and use pip install, not conda.
+
 
 # Setting up
 
@@ -19,6 +26,12 @@ Some devices may enconter : module:command not find
 
 ```
 sudo apt-get install environment-modules
+```
+
+#### tqdm
+
+```
+python3 -m pip install tqdm
 ```
 
 #### SentencePiece
