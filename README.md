@@ -38,7 +38,7 @@ tar xvzf aclImdb_v1.tar.gz
 
 #### Training
 
-Launch a visdom instance for logging.
+Launch a visdom instance for logging. If you enconter some HTTP errors, perhaps it's visdom's problem. Try to restart it or change the port :)
 
 ```
 python3 -m pip install visdom # Install if not present.
