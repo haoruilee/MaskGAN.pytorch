@@ -2,7 +2,7 @@
 
 #### This is a work forked by  jerinphilip/MaskGAN.pytorch, made some polish, thanks to @birdmanmandbir(https://github.com/birdmanmandbir), he contributes a lot.
 
-#### If you like this project, please give me and these co-workers one star :)
+#### If you like this project, please give these co-workers and me one star :)
 
 A PyTorch attempt at reimplementing 
 
