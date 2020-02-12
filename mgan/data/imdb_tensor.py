@@ -22,7 +22,7 @@ class TensorIMDbDataset(Dataset):
     def _construct_vocabulary(self):
         if self.vocab is None:
             raw_dataset = IMDbDataset(self.path)
-            builder = VocabBuilder(raw_dataset, self.tokenizer, self.path)
+            builder = VocabBuilder(raw_dataset, self.tokenizer, self.path, self.mask_builder)
             self.vocab = builder.vocab()
 
     def __len__(self):
@@ -76,7 +76,7 @@ class TensorIMDbDataset(Dataset):
 
         lengths = torch.LongTensor(lengths)
         lengths, sort_order = lengths.sort(descending=True)
-        
+
         def _rearrange(tensor):
             return tensor.index_select(0, sort_order)
 
