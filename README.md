@@ -11,6 +11,14 @@ A PyTorch attempt at reimplementing
 
 # Setting up
 
+#### Module
+
+Some devices may enconter : module:command not find
+
+```
+sudo apt-get install environment-modules
+```
+
 #### SentencePiece
 
 I used [google/SentencePiece](https://github.com/google/sentencepiece) to bring down the vocabulary to make training easier. The trained models are available inside this repository. Install the python bindings through pip so the code can use it.
