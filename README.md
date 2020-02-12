@@ -55,6 +55,9 @@ python3 -m pip install visdom # Install if not present.
 python3 -m visdom.server &
 ```
 
+#### Before run the cmd.sh, Please change the check point path in train.py, line 40 to your own path
+
+
 Run the training script.
 
 ```
