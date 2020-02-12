@@ -19,8 +19,8 @@ class MGANCriticDecoder(LSTMDecoder):
         out_embed_dim = self.additional_fc.out_features if hasattr(self, "additional_fc") else self.hidden_size
         self.fc_out = nn.Linear(out_embed_dim, 1)
 
-    def forward(self, prev_output_tokens, encoder_out_dict, incremental_state=None):
-        x, attn_scores = super().forward(prev_output_tokens, encoder_out_dict, incremental_state)
+    def forward(self, prev_output_tokens, encoder_out, incremental_state=None):
+        x, attn_scores = super().forward(prev_output_tokens, encoder_out, incremental_state)
         return x, attn_scores
 
 
@@ -58,7 +58,7 @@ class MGANCritic(LSTMModel):
                 )
             if args.encoder_embed_dim != args.decoder_embed_dim:
                 raise RuntimeError(
-                    '--share-all-embeddings requires --encoder-embed-dim to '
+                    '--share-all-embeddings requires --encoder_embed_dim to '
                     'match --decoder-embed-dim'
                 )
             pretrained_decoder_embed = pretrained_encoder_embed
@@ -99,7 +99,6 @@ class MGANCritic(LSTMModel):
             dropout_in=args.decoder_dropout_in,
             dropout_out=args.decoder_dropout_out,
             attention=options.eval_bool(args.decoder_attention),
-            encoder_embed_dim=args.encoder_embed_dim,
             encoder_output_units=encoder.output_units,
             pretrained_embed=pretrained_decoder_embed,
             share_input_output_embed=args.share_decoder_input_output_embed,
