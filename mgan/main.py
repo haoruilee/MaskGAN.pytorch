@@ -36,37 +36,40 @@ def main(args):
     max_tokens = max_tokens_per_device * n_devices
     truncate_length = 20
     batch_size = int(max_tokens/truncate_length)
-
-    checkpoint_path = "/home/jerin/mgan-attempts/"
+##########################
+#please change here to your own path
+########################
+    checkpoint_path = "~/Desktop/testset_haorui/jerin/mgan-attempts/"
     saver = Saver(checkpoint_path)
 
     train_path = os.path.join(args.path, 'train')
+    print('train path:',train_path)
     dev_path = os.path.join(args.path, 'test')
 
     train_dataset = TensorIMDbDataset(
-            train_path, spm_tokenize, 
+            train_path, spm_tokenize,
             rmask, truncate_length
     )
 
     # Constructed vocabulary from train
     vocab = train_dataset.vocab
     Task = namedtuple('Task', 'source_dictionary target_dictionary')
-    task = Task(source_dictionary=vocab, 
+    task = Task(source_dictionary=vocab,
             target_dictionary=vocab)
 
     trainer = MGANTrainer(args, task, saver, visdom, vocab)
     def loader(dataset):
-        _loader = DataLoader(dataset, batch_size=batch_size, 
-                collate_fn=TensorIMDbDataset.collate, 
+        _loader = DataLoader(dataset, batch_size=batch_size,
+                collate_fn=TensorIMDbDataset.collate,
                 shuffle=True, num_workers=8)
         return _loader
 
     #trainer.validate_dataset(loader(train_dataset))
 
     dev_dataset = TensorIMDbDataset(
-            dev_path, spm_tokenize, 
+            dev_path, spm_tokenize,
             rmask, truncate_length,
-            vocab 
+            vocab
     )
 
     Datasets = namedtuple('Dataset', 'train dev')
