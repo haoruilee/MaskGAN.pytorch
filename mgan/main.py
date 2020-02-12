@@ -36,9 +36,7 @@ def main(args):
     max_tokens = max_tokens_per_device * n_devices
     truncate_length = 20
     batch_size = int(max_tokens/truncate_length)
-##########################
-#please change here to your own path
-########################
+
     checkpoint_path = "~/Desktop/testset_haorui/jerin/mgan-attempts/"
     saver = Saver(checkpoint_path)
 
