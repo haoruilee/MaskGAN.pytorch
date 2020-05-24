@@ -1,6 +1,6 @@
 # MaskGAN.pytorch
 
-#### This is a work forked by  jerinphilip/MaskGAN.pytorch, made some polish and now you can run it immediately, thanks to @birdmanmandbir(https://github.com/birdmanmandbir), he contributes a lot.
+#### This is a work forked by  jerinphilip/MaskGAN.pytorch, made some polish and now you can run it immediately, thanks to [@birdmanmandbir](https://github.com/birdmanmandbir), he contributes a lot.
 
 #### If you like this project, please give these co-workers and me one star :)
 
